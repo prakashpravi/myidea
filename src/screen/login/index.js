@@ -83,9 +83,9 @@ class Login extends React.Component {
                         <Checkbox className="remember">Remember me</Checkbox>
                     </Form.Item> */}
 
-                    <a className="login-form-forgot" href="">
+                    <span className="login-form-forgot">
                         Forgot password
-              </a>
+              </span>
                 </Form.Item>
 
                 <Form.Item>
@@ -94,7 +94,7 @@ class Login extends React.Component {
                     >
                         Log in
               </Button>
-                    <a href="" className="login-form-register">Don't have an account? SignUp</a>
+                    <span className="login-form-register">Don't have an account? SignUp</span>
                 </Form.Item>
             </Form>
         </div>);
