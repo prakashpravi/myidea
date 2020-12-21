@@ -31,6 +31,7 @@ class Login extends React.Component {
             message: "Success",
             description: "User Login Successfully !"
         });
+        this.props.history.push("/actions");
     }
     render() {
         const { username, password } = this.state;

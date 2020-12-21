@@ -1,0 +1,26 @@
+.sidebarmain {
+    height: 100vh;
+    .menu {
+        width: 44px;
+        margin: 16px 18px;
+        border-radius: 9px;
+        border: none;
+    }
+    .menuItem {
+        background: #f7f7ff !important;
+        border-radius: 6px;
+        box-shadow: none;
+        // box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
+    }
+    .logodiv {
+        margin: 20px 0px;
+    }
+    .avatar {
+        display: flex;
+        margin: auto;
+    }
+    .sidebar {
+        background-color: #000;
+        box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
+    }
+}

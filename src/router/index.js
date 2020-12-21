@@ -17,7 +17,7 @@ class RouterApp extends React.Component {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Login} />
-                    <Route path={routes.Login} component={Home} />
+                    <Route path={routes.Actions} component={Home} />
                 </Switch>
             </Router>
         );
