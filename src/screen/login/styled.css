@@ -1,0 +1,109 @@
+.main {
+  background: #f9f9f9;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .login-form {
+  min-width: 340px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  -webkit-box-shadow: #f3f3f3 1px 1px;
+          box-shadow: #f3f3f3 1px 1px;
+  border-radius: 12px;
+  position: relative;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.main .avatar {
+  position: absolute;
+  z-index: 1;
+  top: -24px;
+  left: 43%;
+  border: 1px solid #f0f0f0;
+}
+
+.main .login-form-forgot {
+  float: right;
+  color: #5e5e5e;
+  font-weight: 500;
+  margin-top: -27px;
+}
+
+.main .remember {
+  color: #5e5e5e;
+  font-weight: 500;
+}
+
+.main .login-form-button {
+  border-radius: 2px;
+  width: 100%;
+  background-color: #29ac96;
+  border-color: #29ac96;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.main ::-webkit-input-placeholder {
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.main :-ms-input-placeholder {
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.main ::-ms-input-placeholder {
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.main ::placeholder {
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.main .ant-form-item-explain-error {
+  color: #db2269;
+  font-size: 0.9em;
+  border-color: #db2269;
+}
+
+.main .title {
+  color: rgba(0, 0, 0, 0.85);
+  margin: 8px 0px 0px;
+}
+
+.main .dis_title {
+  margin: 0px 0px 12px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 13px;
+  margin-bottom: 20px;
+  margin-top: 0.1em !important;
+}
+
+.main .login-form-register {
+  color: #5e5e5e;
+  font-weight: 500;
+}
+
+.main .Input,
+.main .ant-input-affix-wrapper:focus,
+.main .ant-input-affix-wrapper-focused {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-radius: 4px;
+}
+/*# sourceMappingURL=styled.css.map */

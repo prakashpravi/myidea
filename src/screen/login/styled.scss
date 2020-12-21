@@ -1,0 +1,75 @@
+.main {
+    background: #f9f9f9;
+    height: 100vh;
+    display: flex;
+    .login-form {
+        min-width: 340px;
+        margin: auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: rgb(243, 243, 243) 1px 1px;
+        border-radius: 12px;
+        position: relative;
+        border: 1px solid #f0f0f0;
+        text-align: center;
+    }
+    .avatar {
+        position: absolute;
+        z-index: 1;
+        top: -24px;
+        left: 43%;
+        border: 1px solid #f0f0f0;
+    }
+    .login-form-forgot {
+        float: right;
+        color: rgb(94, 94, 94);
+        font-weight: 500;
+        margin-top: -27px;
+    }
+    .remember {
+        color: rgb(94, 94, 94);
+        font-weight: 500;
+    }
+    .login-form-button {
+        border-radius: 2px;
+        width: 100%;
+        background-color: #29ac96;
+        border-color: #29ac96;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    ::placeholder {
+        color: #999;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .ant-form-item-explain-error {
+        color: #db2269;
+        font-size: 0.9em;
+        border-color: #db2269;
+    }
+    .title {
+        color: rgba(0, 0, 0, 0.85);
+        margin: 8px 0px 0px;
+    }
+    .dis_title {
+        margin: 0px 0px 12px;
+        color: rgba(0, 0, 0, 0.65);
+        font-size: 13px;
+        margin-bottom: 20px;
+        margin-top: 0.1em !important;
+    }
+    .login-form-register {
+        color: rgb(94, 94, 94);
+        font-weight: 500;
+    }
+    .Input,
+    .ant-input-affix-wrapper:focus,
+    .ant-input-affix-wrapper-focused {
+        outline: none !important;
+        box-shadow: none !important;
+        border-radius: 4px;
+    }
+}
