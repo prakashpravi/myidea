@@ -1,0 +1,67 @@
+.project_main {
+  background: #f0f2f5c4;
+  width: calc(100vw - 80px);
+  height: 100vh;
+  padding: 20px;
+}
+
+.project_main .add_button {
+  background: #29ac96;
+  color: white;
+  margin: auto 6px;
+  text-transform: uppercase;
+}
+
+.project_main .action_count_title {
+  margin: auto auto auto 0px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.project_main .actions_list_card {
+  border-left: 4px solid #29ac96;
+  -webkit-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 10px !important;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 14px 40px;
+}
+
+.project_main .actions_list_card .todo {
+  color: grey;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0px 8px 0px 0px;
+  border-right: 1px solid #bfbfbf;
+}
+
+.project_main .actions_list_card .title {
+  font-size: 12px;
+  border-right: 1px solid #bfbfbf;
+  padding: 0px 8px 0px 6px;
+  color: #3753ab;
+}
+
+.project_main .actions_list_card .hrs {
+  color: grey;
+  font-size: 12px;
+  padding: 0px 8px 0px 6px;
+  font-weight: 500;
+}
+
+.project_main .actions_list_card .ant-card-body {
+  display: none;
+}
+
+@media (max-width: 426px) {
+  .project_main {
+    width: 100vw;
+    height: 100vh;
+  }
+  .project_main .actions_list_card {
+    margin: 16px;
+  }
+}
+/*# sourceMappingURL=styled.css.map */

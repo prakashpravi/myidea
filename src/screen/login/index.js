@@ -15,8 +15,8 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
-            password: "",
+            username: null,
+            password: null,
         };
     }
 
@@ -31,7 +31,7 @@ class Login extends React.Component {
             message: "Success",
             description: "User Login Successfully !"
         });
-        this.props.history.push("/actions");
+        this.props.history.push("/workspace");
     }
     render() {
         const { username, password } = this.state;

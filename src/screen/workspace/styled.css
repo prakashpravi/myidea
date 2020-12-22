@@ -1,0 +1,92 @@
+.workspace {
+  background: #f9f9f9;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.workspace .title {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 46px;
+  text-align: center;
+  letter-spacing: -0.75px;
+  width: 100%;
+  margin: 8px !important;
+}
+
+.workspace .dis_title {
+  font-size: 18px;
+  line-height: 27px;
+  margin: 8px;
+  color: #454245;
+  width: 100%;
+  text-align: center;
+}
+
+.workspace .workspacelog {
+  margin: auto;
+}
+
+.workspace .workspacelogcard {
+  margin-top: 10px !important;
+  margin: auto;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 340px;
+  background: #fff;
+  -webkit-box-shadow: #f3f3f3 1px 1px;
+          box-shadow: #f3f3f3 1px 1px;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.workspace .workspacelogcard .workspacelogcard_title {
+  font-size: 18px;
+  line-height: 1.50001;
+  font-weight: 700;
+}
+
+.workspace .workspacelogcard .ant-card-meta-title {
+  text-align: left;
+  margin: 0px;
+}
+
+.workspace .login-form {
+  margin: auto;
+  text-align: center;
+}
+
+.workspace .ant-form-item {
+  margin-top: 26px;
+  margin: 20px;
+}
+
+.workspace .login-form-button {
+  width: 100%;
+  padding: 17px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 600;
+  margin-bottom: 40px !important;
+}
+
+.workspace .already {
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+}
+/*# sourceMappingURL=styled.css.map */

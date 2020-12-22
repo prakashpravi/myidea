@@ -1,0 +1,71 @@
+.workspace {
+    background: #f9f9f9;
+    height: 100vh;
+    display: flex;
+
+    .title {
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 46px;
+        text-align: center;
+        letter-spacing: -0.75px;
+        width: 100%;
+        margin: 8px !important;
+    }
+    .dis_title {
+        font-size: 18px;
+        line-height: 27px;
+        margin: 8px;
+        color: #454245;
+        width: 100%;
+        text-align: center;
+    }
+    .workspacelog {
+        margin: auto;
+    }
+    .workspacelogcard {
+        margin-top: 10px !important;
+        margin: auto;
+        height: 100px;
+        display: flex;
+        min-width: 340px;
+        background: #fff;
+        box-shadow: #f3f3f3 1px 1px;
+        border-radius: 12px;
+        border: 1px solid #f0f0f0;
+        text-align: center;
+        cursor: pointer;
+        .workspacelogcard_title {
+            font-size: 18px;
+            line-height: 1.50001;
+            font-weight: 700;
+        }
+        .ant-card-meta-title {
+            text-align: left;
+            margin: 0px;
+        }
+    }
+    .login-form {
+        margin: auto;
+        text-align: center;
+    }
+    .ant-form-item {
+        margin-top: 26px;
+        margin: 20px;
+    }
+    .login-form-button {
+        width: 100%;
+        padding: 17px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
+        margin-bottom: 40px !important;
+    }
+    .already {
+        font-weight: 700;
+        text-align: center;
+        width: 100%;
+    }
+}

@@ -1,16 +1,20 @@
-import * as React from "react";
+import React from 'react';
 import {
-    Row, Col, Button, Typography, Card, Tooltip, Modal, DatePicker, Select,
-    message,
-    notification,
+    Row, Col, Button, Select, message, Modal, notification,
+    DatePicker,
+    Input,
+    Card,
     Dropdown,
-    Menu
+    Menu,
+    Typography
 } from 'antd';
+import {
+    PlusOutlined, MoreOutlined, StarOutlined
+} from '@ant-design/icons';
 import "./styled.css";
-import { PlusOutlined, StarOutlined, MoreOutlined, PlayCircleOutlined, SettingOutlined } from '@ant-design/icons';
-const { Text } = Typography;
 const { Option } = Select;
-class Actions extends React.Component {
+const { Text } = Typography;
+class Project extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,7 +33,7 @@ class Actions extends React.Component {
         await message.loading("Loding....", 3);
         notification.success({
             message: "Success",
-            description: "Successfully added your actions !"
+            description: "Successfully added your Project !"
         });
         this.setState({
             ...state,
@@ -38,51 +42,32 @@ class Actions extends React.Component {
     }
     render() {
         const { addnew } = this.state;
-        const chooseaction = ["Meeting", "To Do", "Bug"];
+        const chooseaction = ["Project", "Sprint"];
         const chooseactionpriority = ["Critical", "High", "Medium", "Low"];
-        const chooseGRPnames = ["Pjct_Name1", "Pjct_Name2"];
+        const chooseGRPnames = ["1", "2"];
         const members = ['Prakash', 'NaveenDa', "Guru gi"];
         return (
-            <div className="actionsmain">
+            <div className="project_main">
                 <Row>
-                    <Col flex="1 1" className="action_count_title">Actions(3)</Col>
-                    <Col flex="0 1"><Button className="add_button" icon={<PlusOutlined />} onClick={() => this.handleopen()}> ADD NEW</Button></Col>
-                </Row>
-                <Row>
-                    <Col flex="1 1">
-                        <div className="timebase">
-                            <Text level={5} className="timebase_label">Time Based:</Text>
-                            {["Today", "This Week", "This Month", "Overdue", "All"].map(v => { return <Button className="timebase_btn">{v}</Button> })}
-                        </div>
-                    </Col>
-                    <Col flex="0 1" className="timebase">
+                    <Col className="action_count_title">Projects(3)</Col>
+                    <Col className="timebase">
                         <Text level={5} className="timebase_filter">
                             <Dropdown overlay={<Menu> Filter lists soon !</Menu>} placement="bottomLeft" trigger={['click']}>
                                 <Button>Filter</Button>
                             </Dropdown></Text>
+                        <Button className="add_button" icon={<PlusOutlined />} onClick={() => this.handleopen()}> ADD NEW</Button>
                     </Col>
-                </Row>
-                <Row gutter={10}>
+                </Row><br />
                 {[1, 2, 3].map(v => {
-                    return  <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 6 }} lg={{ span: 6 }}>
-                        <Card className="actions_list_card"
-                            actions={[
-                                <Tooltip title="Hight"><PlayCircleOutlined /></Tooltip>,
-                                <SettingOutlined key="setting" />
-                            ]}
-                            title={<span><label className="todo">To Do - 0001</label><label className="title">#projuctName</label><label className="hrs">6 hrs</label></span>}
-                            extra={<span href="#"><StarOutlined />&nbsp;<MoreOutlined /></span>}>
-                            <Tooltip title="Hey this a new Action Title! Created by @Prakash P">
-                                <Text level={5} className="timebase_label_main">Hey this a new Action Title!</Text>
-                            </Tooltip>
-                            <span className="todo_date">Due:Dec 21, 2020 11:59 PM</span>
-                            <span className="todo_by"> By Prakash</span>
-                        </Card>
-                    </Col> })}
-                </Row>
-
+                    return <Card className="actions_list_card"
+                        title={<span>Project Titlt<br /><label className="todo">PROJECT</label>
+                            <label className="title">#projuctName</label>
+                            <label className="todo">&nbsp;Nov 27, 2020 - Dec 27, 2020</label>
+                            <label className="hrs">by NaveenDa</label></span>}
+                        extra={<span href="#"><StarOutlined />&nbsp;<MoreOutlined /></span>} />
+                })}
                 <Modal
-                    title="Action"
+                    title="CREATE A PROJECT"
                     style={{ top: 20 }}
                     visible={addnew}
                     onOk={() => this.handleSubmit()}
@@ -92,6 +77,8 @@ class Actions extends React.Component {
                     <div
                         className="Action_model"
                     >
+                        <Input placeholder="Title"
+                            style={{ width: "92%" }} />
                         <DatePicker showTime placeholder="Start Date and Time"
                             style={{ width: "44%" }}
                         />
@@ -101,7 +88,7 @@ class Actions extends React.Component {
                         <Select
                             showSearch
                             style={{ width: "44%" }}
-                            placeholder="Select Action Types"
+                            placeholder="Select Project Types"
                             // onChange={onChange}
                             // onFocus={onFocus}
                             // onBlur={onBlur}
@@ -129,7 +116,7 @@ class Actions extends React.Component {
                         <Select
                             showSearch
                             style={{ width: "92%" }}
-                            placeholder="Select Tag"
+                            placeholder="Available Members"
                             // onChange={onChange}
                             // onFocus={onFocus}
                             // onBlur={onBlur}
@@ -157,18 +144,11 @@ class Actions extends React.Component {
                         >
                             {members?.map(v => { return <Option key={v}>{v}</Option> })}
                         </Select>
-                        <Select
-                            showArrow
-                            mode="multiple"
-                            style={{ width: '92%' }}
-                            placeholder="Select Watcher"
-                        >
-                            {members?.map(v => { return <Option key={v}>{v}</Option> })}
-                        </Select>
                     </div>
                 </Modal>
             </div>
         );
     }
 }
-export default Actions;
+
+export default Project;

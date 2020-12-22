@@ -24,12 +24,19 @@
         width: 100% !important;
         display: flex;
     }
+    .timebase_filter{
+        margin-bottom: 5px;
+        font-size: 20px;
+        font-weight: 500;
+        width: 100% !important;
+        display: flex; 
+    }
     .timebase_btn {
         color: #392f65;
         background: #fff;
         font-size: 12px;
         height: 26px;
-        border:1px solid #d7d7d7;
+        border: 1px solid #d7d7d7;
         font-weight: 500;
         cursor: pointer;
         outline: none;
@@ -91,5 +98,24 @@
             padding: 0px 6px 0px 0px;
             color: rgba(0, 0, 0, 0.65);
         }
+    }
+}
+.ant-modal-header,
+.ant-modal-content {
+    border-radius: 20px !important;
+}
+.Action_model {
+    text-align: center !important;
+    .ant-picker {
+        margin: 8px !important;
+    }
+    .ant-select {
+        margin: 8px !important;
+    }
+}
+@media (max-width: 426px) {
+    .actionsmain {
+        width: 100vw;
+        height:100%;
     }
 }

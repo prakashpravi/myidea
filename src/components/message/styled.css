@@ -1,0 +1,69 @@
+.messagesmain .message_list {
+  height: 100vh;
+  width: 240px;
+  background-color: #fff;
+  border-right: 1px solid #f7f4f4;
+}
+
+.messagesmain .message_list_title_main {
+  padding: 1.3em 0px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid #f7f4f4;
+}
+
+.messagesmain .message_list_title_main_div {
+  margin-top: 10px;
+}
+
+.messagesmain .message_list_title_main_div .message_list_title {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  padding: 4px 20px;
+  border-radius: 2px;
+  margin: 0px;
+}
+
+.messagesmain .message_list_title_main_div .message_list_title:hover {
+  background: #d3d3d345;
+}
+
+.messagesmain .details .message_list_title_main {
+  width: 100%;
+}
+
+.messagesmain .details .actions_list_card {
+  overflow: hidden;
+  background-color: #fff;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #f7f4f4;
+}
+
+.messagesmain .details .actions_list_card .todo {
+  color: grey;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0px 8px 0px 0px;
+  border-right: 1px solid #bfbfbf;
+}
+
+.messagesmain .details .actions_list_card .title {
+  font-size: 12px;
+  padding: 0px 8px 0px 6px;
+  color: #3753ab;
+}
+
+.messagesmain .details .actions_list_card .ant-card-body {
+  display: none;
+}
+/*# sourceMappingURL=styled.css.map */

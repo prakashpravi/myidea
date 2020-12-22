@@ -1,5 +1,8 @@
 const routes = {
     Login: "/login",
-    Actions:"/actions"
+    Actions:"/actions",
+    Workspace:"/workspace",
+    Project:"/project",
+    Message:"/message"
 }
 export default routes;

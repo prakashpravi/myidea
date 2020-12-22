@@ -1,0 +1,57 @@
+.project_main {
+    background: #f0f2f5c4;
+    width: calc(100vw - 80px);
+    height: 100vh;
+    padding: 20px;
+    .add_button {
+        background: rgb(41, 172, 150);
+        color: white;
+        margin: auto 6px;
+        text-transform: uppercase;
+    }
+    .action_count_title {
+        margin: auto auto auto 0px;
+        font-size: 20px;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.65);
+    }
+    .actions_list_card {
+        border-left: 4px solid #29ac96;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        border-radius: 10px !important;
+        overflow: hidden;
+        background-color: #fff;
+        margin: 14px 40px;
+        .todo {
+            color: grey;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 0px 8px 0px 0px;
+            border-right: 1px solid rgb(191, 191, 191);
+        }
+        .title {
+            font-size: 12px;
+            border-right: 1px solid rgb(191, 191, 191);
+            padding: 0px 8px 0px 6px;
+            color: rgb(55, 83, 171);
+        }
+        .hrs {
+            color: grey;
+            font-size: 12px;
+            padding: 0px 8px 0px 6px;
+            font-weight: 500;
+        }
+        .ant-card-body {
+            display: none;
+        }
+    }
+}
+@media (max-width: 426px) {
+    .project_main {
+        width: 100vw;
+        height: 100vh;
+        .actions_list_card {
+            margin: 16px;
+        }
+    }
+}
