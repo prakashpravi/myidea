@@ -2,19 +2,54 @@
   height: 100vh;
 }
 
-.sidebarmain .menu {
+.sidebarmain aside {
+  max-width: 60px !important;
+  min-width: 60px !important;
+  width: 60px !important;
+}
+
+.sidebarmain .menu_notactive {
   width: 44px;
-  margin: 16px 18px;
+  margin: 14px auto;
   border-radius: 9px;
   border: none;
-  background: #008e8e !important;
+  background: #654cfe !important;
   color: #f7f7f7;
 }
 
-.sidebarmain .menuItem {
-  background: #008e8e !important;
+.sidebarmain .menuItem_notactive {
+  background: #654cfe !important;
   border-radius: 6px;
   color: #f7f7f7;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin: 14px 8px;
+  padding: 2px 12px;
+}
+
+.sidebarmain .menuItem_notactive .ant-menu-item-icon {
+  font-size: 20px;
+}
+
+.sidebarmain .menu {
+  width: 44px;
+  margin: 14px auto;
+  border-radius: 9px;
+  border: none;
+  background: #313eda !important;
+  color: #f7f7f7;
+}
+
+.sidebarmain .menu .ant-menu-item-icon {
+  font-size: 20px;
+}
+
+.sidebarmain .menuItem {
+  background: #313eda !important;
+  border-radius: 6px;
+  color: #f7f7f7;
+  margin: 0;
+  padding: 2px 12px;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -32,7 +67,7 @@
 
 .sidebarmain .sidebar {
   height: 100vh;
-  background-color: #015e6d;
+  background-color: #654cfe;
   -webkit-box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
           box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
 }
@@ -61,6 +96,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    background-color: #654cfe;
     -webkit-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     border-top: 1px solid #fafafa6b;
@@ -68,8 +104,8 @@
   .mobile_sidebar .menu {
     margin: auto;
   }
-  .mobile_sidebar .menuItem {
-    background: #fff !important;
+  .mobile_sidebar .menuItem_notactive {
+    background: #654cfe !important;
     border-radius: 6px;
     -webkit-box-shadow: none;
             box-shadow: none;
@@ -80,6 +116,21 @@
     margin-left: 4px;
     margin-right: 4px;
     font-size: 18px;
+    color: #f7f7f7;
+  }
+  .mobile_sidebar .menuItem {
+    background: #313eda !important;
+    border-radius: 6px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 10px 14px;
+    text-overflow: clip;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: 18px;
+    color: #f7f7f7;
   }
 }
 /*# sourceMappingURL=styled.css.map */

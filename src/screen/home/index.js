@@ -6,6 +6,8 @@ import Actions from "../../components/actions/index";
 import SiderBar from "../../components/sidebar";
 import Project from "../../components/project";
 import Message from "../../components/message";
+import Header from "../../components/header/index";
+import Drive from "../../components/drive";
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -20,13 +22,17 @@ class Home extends React.Component {
             return <Project {...this.props} />
         } else if (window.location.pathname === routes.Message) {
             return <Message {...this.props} />
+        } else if (window.location.pathname === routes.Drive) {
+            return <Drive {...this.props} />
         }
     }
     render() {
         return (
             <Row>
                 <Col> <SiderBar {...this.props} /> </Col>
-                <Col span={12}>{this.Content()}</Col>
+                <Col>
+                    <Header />
+                    {this.Content()}</Col>
             </Row>
         );
     }

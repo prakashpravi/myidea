@@ -1,7 +1,7 @@
 .project_main {
-  background: #f0f2f5c4;
+  background: #e8ecee;
   width: calc(100vw - 80px);
-  height: 100vh;
+  height: calc(100vh - 53px);
   padding: 20px;
 }
 

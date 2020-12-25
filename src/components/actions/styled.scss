@@ -1,7 +1,7 @@
 .actionsmain {
-    background: #f0f2f5c4;
+    background: #e8ecee;
     width: calc(100vw - 80px);
-    height: 100vh;
+    height: calc(100vh - 53px);
     padding: 20px;
     .add_button {
         background: rgb(41, 172, 150);
@@ -100,19 +100,19 @@
         }
     }
 }
-.ant-modal-header,
-.ant-modal-content {
-    border-radius: 20px !important;
-}
-.Action_model {
-    text-align: center !important;
-    .ant-picker {
-        margin: 8px !important;
-    }
-    .ant-select {
-        margin: 8px !important;
-    }
-}
+// .ant-modal-header,
+// .ant-modal-content {
+//     border-radius: 20px !important;
+// }
+// .Action_model {
+//     text-align: center !important;
+//     .ant-picker {
+//         margin: 8px !important;
+//     }
+//     .ant-select {
+//         margin: 8px !important;
+//     }
+// }
 @media (max-width: 426px) {
     .actionsmain {
         width: 100vw;

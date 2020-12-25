@@ -25,7 +25,7 @@ class Workspace extends React.Component {
             message: "Success",
             description: "Welcome your Login Workspace!"
         });
-        this.props.history.push("/actions");
+        this.props.history.push("/drive");
     }
     render() {
         const { email } = this.state;
@@ -65,7 +65,7 @@ class Workspace extends React.Component {
                     <span className="already">You’re already signed in to</span>
                     <Card className="workspacelogcard">
                         <Meta
-                            onClick={() => this.props.history.push("/actions")}
+                            onClick={() => this.props.history.push("/drive")}
                             avatar={<Avatar shape="square" size={50} src="https://media.wired.com/photos/5c0eb2350dc19b43aab5f1d6/125:94/w_2249,h_1691,c_limit/Sundar-1056109484.jpg" />}
                             title={<span className="workspacelogcard_title">My'Idea</span>}
                             description="myidea-workspace.app.com"

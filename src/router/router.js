@@ -3,6 +3,7 @@ const routes = {
     Actions:"/actions",
     Workspace:"/workspace",
     Project:"/project",
-    Message:"/message"
+    Message:"/message",
+    Drive:"/drive"
 }
 export default routes;

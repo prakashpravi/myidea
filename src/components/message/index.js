@@ -3,11 +3,15 @@ import {
     Row,
     Col,
     Typography,
-    Card
+    Card,
+    Avatar,
+    Badge
 } from 'antd';
 import "./styled.css";
 import { UserOutlined } from '@ant-design/icons';
 const { Title } = Typography;
+const { Meta } = Card;
+
 class Message extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +27,14 @@ class Message extends React.Component {
                     <Col className="message_list">
                         <Title className="message_list_title_main" level={1}>Workspace Title </Title>
                         <div className="message_list_title_main_div">
-                            {["Members group", "General", "The Project Title"].map(v => { return <Title className="message_list_title" level={5}># {v} </Title> })}
+                            {["Members group", "General", "The Project Title"].map(v => {
+                                return <Meta
+                                    className="message_list_title"
+                                    avatar={<Avatar shape="square" src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg" />}
+                                    title={v}
+                                    description={<span><Badge dot />This is the description</span>}
+                                />
+                            })}
                         </div>
                     </Col>
                     <Col className="details">

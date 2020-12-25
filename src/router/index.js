@@ -22,6 +22,7 @@ class RouterApp extends React.Component {
                     <Route path={routes.Workspace} component={Workspace} />
                     <Route path={routes.Project} component={Home} />
                     <Route path={routes.Message} component={Home} />
+                    <Route path={routes.Drive} component={Home} />
                 </Switch>
             </Router>
         );

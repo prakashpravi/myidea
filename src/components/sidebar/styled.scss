@@ -1,17 +1,47 @@
 .sidebarmain {
     height: 100vh;
-    .menu {
+    aside {
+        max-width: 60px !important;
+        min-width: 60px !important;
+        width: 60px !important;
+    }
+    .menu_notactive {
         width: 44px;
-        margin: 16px 18px;
+        margin: 14px auto;
         border-radius: 9px;
         border: none;
-        background: #008e8e !important;
+        background: rgb(101, 76, 254) !important;
         color: #f7f7f7;
     }
-    .menuItem {
-        background: #008e8e !important;
+    .menuItem_notactive {
+        background: rgb(101, 76, 254) !important;
         border-radius: 6px;
         color: #f7f7f7;
+        box-shadow: none;
+        margin: 14px 8px;
+
+        padding: 2px 12px;
+        .ant-menu-item-icon {
+            font-size: 20px;
+        }
+    }
+    .menu {
+        width: 44px;
+        margin: 14px auto;
+        border-radius: 9px;
+        border: none;
+        background: #313eda !important;
+        color: #f7f7f7;
+        .ant-menu-item-icon {
+            font-size: 20px;
+        }
+    }
+    .menuItem {
+        background: #313eda !important;
+        border-radius: 6px;
+        color: #f7f7f7;
+        margin: 0;
+        padding: 2px 12px;
         box-shadow: none;
         // box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
     }
@@ -24,7 +54,7 @@
     }
     .sidebar {
         height: 100vh;
-        background-color: #015e6d;
+        background-color: rgb(101, 76, 254);
         box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
     }
 }
@@ -49,13 +79,14 @@
         bottom: 0;
         z-index: 1;
         display: flex;
+        background-color: rgb(101, 76, 254);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         border-top: 1px solid #fafafa6b;
         .menu {
             margin: auto;
         }
-        .menuItem {
-            background: #fff !important;
+        .menuItem_notactive {
+            background: rgb(101, 76, 254) !important;
             border-radius: 6px;
             box-shadow: none;
             padding: 10px 14px;
@@ -65,6 +96,20 @@
             margin-left: 4px;
             margin-right: 4px;
             font-size: 18px;
+            color: #f7f7f7;
+        }
+        .menuItem {
+            background: #313eda !important;
+            border-radius: 6px;
+            box-shadow: none;
+            padding: 10px 14px;
+            text-overflow: clip;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 4px;
+            margin-right: 4px;
+            font-size: 18px;
+            color: #f7f7f7;
         }
     }
 }
