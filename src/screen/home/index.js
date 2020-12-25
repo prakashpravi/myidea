@@ -28,11 +28,9 @@ class Home extends React.Component {
     }
     render() {
         return (
-            <Row>
+            <Row style={{ width: "max-content" }}>
                 <Col> <SiderBar {...this.props} /> </Col>
-                <Col>
-                    <Header />
-                    {this.Content()}</Col>
+                <Col> <Header /> {this.Content()}</Col>
             </Row>
         );
     }

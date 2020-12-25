@@ -1,14 +1,22 @@
 import React from 'react';
-import { Typography, Card, Row, Col, Dropdown, Menu, Avatar, Tooltip, message, notification, Upload } from 'antd';
 import {
-    VideoCameraOutlined, FileImageOutlined, FileOutlined, CustomerServiceOutlined, MoreOutlined, DeleteOutlined,
-    CopyOutlined, ScissorOutlined, RetweetOutlined, StarFilled, StarOutlined, PlusOutlined, InboxOutlined,
-    DownloadOutlined, ExpandAltOutlined, PlayCircleOutlined, FullscreenOutlined
+    Typography, Card, Row, Col,
+    Dropdown, Menu, Avatar, Tooltip,
+    message, notification, Upload
+} from 'antd';
+import {
+    VideoCameraOutlined, FileImageOutlined, FileOutlined,
+    CustomerServiceOutlined, MoreOutlined, DeleteOutlined,
+    CopyOutlined, ScissorOutlined, RetweetOutlined, StarFilled,
+    StarOutlined, PlusOutlined, InboxOutlined, DownloadOutlined,
+    ExpandAltOutlined, PlayCircleOutlined, FullscreenOutlined
 } from '@ant-design/icons';
 import ModalCom from "../comman/dialogbox/index";
 import "./styled.css";
+
 const { Title } = Typography;
 const { Dragger } = Upload;
+
 class Drive extends React.Component {
     constructor(props) {
         super(props);
@@ -35,10 +43,7 @@ class Drive extends React.Component {
     }
     handleopen = () => {
         const state = this.state;
-        this.setState({
-            ...state,
-            addnew: !state.addnew
-        })
+        this.setState({ ...state, addnew: !state.addnew })
     }
     handleSubmit = async () => {
         const state = this.state;
@@ -47,10 +52,7 @@ class Drive extends React.Component {
             message: "Success",
             description: "Successfully added your File !"
         });
-        this.setState({
-            ...state,
-            addnew: !state.addnew
-        })
+        this.setState({ ...state, addnew: !state.addnew })
     }
     handlechangestar = (v) => {
         const state = this.state;
