@@ -4,6 +4,19 @@
     height: 100vh;
     padding: 70px 40px;
     overflow: auto;
+    .add_folder_div {
+        text-align: right;
+        .btn {
+            margin: 14px 0px;
+            border-radius: 6px;
+            // color: #3e9efc;
+            // background-color: #d9ecff;
+            font-weight: 400;
+            border: 1px solid #00000038;
+            outline: unset;
+            color: #000;
+        }
+    }
     .addicon {
         position: fixed;
         bottom: 40px;
@@ -29,7 +42,7 @@
     .sub_title_recent {
         opacity: 0.7;
         font-size: 17px;
-        margin-top: 30px;
+        // margin-top: 30px;
         color: "rgb(0 0 0 / 93%)";
     }
     // .drive_list_card:hover {
@@ -60,11 +73,11 @@
         }
         .drive_list_card_div {
             display: flex;
-            .img {
-                margin-right: 8px;
-                width: 40px;
-                height: 40px;
-            }
+            // .img {
+            //     margin-right: 8px;
+            //     width: 40px;
+            //     height: 40px;
+            // }
             .icon_ {
                 font-size: 29px;
                 margin-right: 8px;
@@ -99,23 +112,37 @@
             padding: 6px;
         }
     }
-    .ant-upload.ant-upload-drag {
+    .ant-upload.ant-upload-drag,
+    .ant-upload-select {
         font-weight: 500;
         background: transparent;
         border: 1px solid #f0f0f0;
         border-radius: 2px 2px 0 0;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
     }
-    .ant-upload-list-picture .ant-upload-list-item,
-    .ant-upload-list-picture-card .ant-upload-list-item {
-        color: rgba(0, 0, 0, 0.85);
-        font-weight: 500;
-        font-size: 14px;
-        background: transparent;
-        border: 1px solid #f0f0f0;
-        border-radius: 2px 2px 0 0;
-        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    .ant-upload {
+        font-size: 12px;
+        opacity: 0.6;
+        padding: 6px;
     }
+    .ant-upload-drag-icon {
+        font-size: 20px;
+    }
+    .ant-upload-text {
+        opacity: unset;
+        color: #000;
+    }
+    // .ant-upload-list-picture .ant-upload-list-item,
+    // .ant-upload-list-picture-card .ant-upload-list-item {
+    //     color: rgba(0, 0, 0, 0.85);
+    //     font-weight: 500;
+    //     font-size: 14px;
+    //     background: transparent;
+    //     border: 1px solid #f0f0f0;
+    //     border-radius: 2px 2px 0 0;
+    //     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    // }
 }
 .ant-modal-footer {
     .ant-btn-primary {
@@ -145,6 +172,9 @@
         width: 100vw;
         height: 100%;
         padding: 70px 20px;
+        .add_folder_div {
+            text-align: center;
+        }
         .addicon {
             right: 20px;
             bottom: 80px;
