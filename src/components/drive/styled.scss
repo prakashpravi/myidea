@@ -4,6 +4,9 @@
     height: 100vh;
     padding: 70px 40px;
     overflow: auto;
+    .empty_data {
+        margin: auto;
+    }
     .add_folder_div {
         text-align: right;
         .btn {

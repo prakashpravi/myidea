@@ -3,7 +3,7 @@ import {
     Typography, Card, Row, Col,
     Dropdown, Menu, Avatar, Tooltip,
     message, notification, Upload,
-    Button, Checkbox
+    Button, Checkbox, Empty
 } from 'antd';
 import {
     VideoCameraOutlined, FileImageOutlined, FileOutlined,
@@ -18,7 +18,7 @@ import "./styled.css";
 import moment from "moment";
 
 const { Title } = Typography;
-
+var dataList = [];
 class Drive extends React.Component {
     constructor(props) {
         super(props);
@@ -28,32 +28,28 @@ class Drive extends React.Component {
             showfilesdata: {},
             showfilesopen: false,
             data: [{
-                uid: "-1",
                 name: "GregoriB Video",
-                size: "6686",
+                size: "219.63 KB",
                 typepoint: "mp4",
                 type: "video",
                 date: "Jan 29,2020",
                 url: "https://github.com/gregoriB/custom-HTML5-video-player-Javascript/blob/master/video.mp4?raw=true",
             }, {
-                uid: "-2",
                 name: "Audio File",
-                size: "6686",
+                size: "219.63 KB",
                 typepoint: "mp3",
                 type: "audio",
                 date: "Jan 29,2020",
                 url: "https://music.kcak11.com/playlist/favorites/Violin%20Music.mp3"
             }, {
-                uid: "-3",
                 name: "Doccuments",
-                size: "6686",
-                typepoint: "file",
-                type: "text",
+                size: "219.63 KB",
+                typepoint: "folder",
+                type: "folder",
                 date: "Jan 29,2020",
             }, {
-                uid: "-4",
                 name: "Pdf File",
-                size: "6686",
+                size: "219.63 KB",
                 typepoint: "pdf",
                 type: "application",
                 date: "Jan 29,2020",
@@ -61,77 +57,70 @@ class Drive extends React.Component {
             }],
             datalists: [
                 {
-                    uid: "-1",
                     name: "Snail Video File",
-                    size: "6686",
+                    size: "219.63 KB",
                     typepoint: "mp4",
                     type: "video",
                     date: "Jan 29,2020",
                     url: "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-slow.mp4",
                 }, {
-                    uid: "-2",
                     name: "Audio File",
-                    size: "6686",
+                    size: "219.63 KB",
                     typepoint: "mp3",
                     type: "audio",
                     date: "Jan 29,2020",
                     url: "https://music.kcak11.com/playlist/favorites/Violin%20Music.mp3"
                 }, {
-                    uid: "-3",
                     name: "Doccument Files",
-                    size: "6686",
+                    size: "219.63 KB",
                     typepoint: "pdf",
-                    type: "image",
+                    type: "application",
                     date: "Apr 13,2020",
                 }, {
-                    uid: "-4",
                     name: "Sintel trailer",
-                    size: "6686",
+                    size: "219.63 KB",
                     typepoint: "mp4",
                     type: "video",
                     date: "Jan 29,2020",
                     url: "http://media.w3.org/2010/05/sintel/trailer.mp4"
                 }, {
-                    uid: "-5",
                     name: "Image File",
-                    size: "6686",
+                    size: "219.63 KB",
                     typepoint: "jpg",
                     type: "image",
                     date: "Apr 13,2020",
                     url: "https://media.wired.com/photos/5ec70372c96258473f891964/16:9/w_2399,h_1349,c_limit/Biz-pichai-h_15151797.jpg",
                 }, {
-                    uid: "-6",
                     name: "Gif File",
-                    size: "6686",
+                    size: "219.63 KB",
                     type: "image",
                     typepoint: "gif",
                     date: "Apr 13,2020",
                     url: "https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif",
                 }, {
-                    uid: "-7",
                     name: "Doccuments",
-                    size: "6686",
-                    typepoint: "file",
-                    type: "text",
+                    size: "219.63 KB",
+                    typepoint: "folder",
+                    type: "folder",
                     date: "Jan 29,2020",
                 }
+
             ],
             datalistsData: [],
-            error: false
+            filter: null,
+            error: false,
+            folder: false
         }
     }
     handleopen = async (v) => {
-        const state = this.state;
         if (v === "cancel") {
-            this.setState({
-                ...state,
-                addnew: !state.addnew,
-                datalistsData: []
+            this.setState(state => {
+                state.addnew = !state.addnew
+                return state.datalistsData = []
             })
         } else {
-            this.setState({
-                ...state,
-                addnew: !state.addnew,
+            this.setState(state => {
+                return state.addnew = !state.addnew
             })
         }
     }
@@ -145,18 +134,38 @@ class Drive extends React.Component {
                     message: "Success",
                     description: "Successfully added your File !"
                 });
-                this.setState({ ...state, addnew: !state.addnew })
+                this.setState(state => {
+                    state.addnew = !state.addnew
+                    return state.datalistsData = []
+                })
             } else {
                 message.error("Please select you file...");
             }
         }
     }
+    handlechangefilter = async (val) => {
+        debugger
+        const state = this.state;
+        const update = state.filter === val ? "" : val;
+        await this.setState(state => {
+            return state.filter = update
+        }
+            // , () => {
+            //     this.setState(state => {
+            //         if (state.filter) {
+            //             state.data = state.data?.map(v => { if (v?.type === val) { return v } })
+            //         } else {
+            //             state.data = state.data
+            //         }
+            //     })
+            // }
+        )
+    }
     handlechangestar = (v) => {
         const state = this.state;
         const update = v === state.star ? null : v
-        this.setState({
-            ...state,
-            star: update
+        this.setState(state => {
+            return state.star = update
         })
     }
     getBase64 = (img, callback) => {
@@ -166,55 +175,71 @@ class Drive extends React.Component {
     }
     handleSubit = () => {
         const state = this.state;
-        const v = state?.datalistsData.map(v => { return v });
-        state.data.push(v[0])
-        this.setState({
-            ...state,
-        })
+        state.data.push(...state.datalistsData);
+        this.setState(state => { return state })
+    }
+    formatSizeUnits = (bytes) => {
+        if (bytes >= 1073741824) { bytes = (bytes / 1073741824).toFixed(2) + " GB"; }
+        else if (bytes >= 1048576) { bytes = (bytes / 1048576).toFixed(2) + " MB"; }
+        else if (bytes >= 1024) { bytes = (bytes / 1024).toFixed(2) + " KB"; }
+        else if (bytes > 1) { bytes = bytes + " bytes"; }
+        else if (bytes === 1) { bytes = bytes + " byte"; }
+        else { bytes = "0 bytes"; }
+        return bytes;
     }
     handleChange = (info) => {
-        debugger
         const state = this.state;
-
-        const isLt2M = info.file.size / 1024 / 1024 < 2;
+        this.setState(state => {
+            return state.folder = false
+        })
+        // console.log("............>", info)
+        const isLt2M = info?.file?.size <= 1000000000;
         if (!isLt2M) {
-            this.setState({
-                ...state,
-                error: true
+            this.setState(state => {
+                return state.error = true
             })
             if (!state.error) {
-                message.error('Image must smaller than 2MB!');
+                return message.error('Image must smaller than 2MB!');
             }
         } else {
-            this.getBase64(info.file.originFileObj, imageUrl =>
-                this.setState({
-                    ...state,
-                    error: false,
-                    datalistsData: [{
-                        uid: `-${state.data?.length + 1}`,
-                        name: info.file.name,
-                        status: "done",
-                        type: info.file.type.split("/")[0],
-                        typepoint: info.file.type.split("/")[1],
-                        size: Math.round(info.file.size),
-                        url: imageUrl,
-                        date: moment(info.file.lastModifiedDate).format("MMM Do YYYY"),
-                    }]
-                }),
-            );
+            this.getBase64(info.file.originFileObj, imageUrl => {
+                dataList?.push({
+                    name: info.file.name,
+                    status: "done",
+                    type: info.file.type.split("/")[0],
+                    typepoint: info.file.type.split("/")[1],
+                    size: this.formatSizeUnits(Math.round(info.file.size)),
+                    url: imageUrl,
+                    date: moment(info.file.lastModifiedDate).format("MMM Do YYYY"),
+                    folder: info.file?.originFileObj?.webkitRelativePath?.split("/")[0],
+                })
+                return this.setState(state => {
+                    state.error = false
+                    return state.datalistsData = dataList
+                })
+            })
         }
     }
+    onRemove = (file) => {
+        this.setState(state => {
+            const index = state.datalistsData.indexOf(file);
+            const newFileList = state.datalistsData.slice();
+            newFileList.splice(index, 1);
+            return {
+                ...state, datalistsData: newFileList,
+            };
+        });
+    }
+
     ondelete = (name, id) => {
-        debugger
         const state = this.state;
-        const update = state[name]?.filter((v, i) => { return v?.uid !== id })
-        this.setState({
-            ...state,
-            [name]: update
+        const update = state[name]?.filter((v, i) => { return i !== id })
+        this.setState(state => {
+            return state[name] = update
         })
     }
     filesIcon = (v) => {
-        if (v === "text") {
+        if (v === "folder") {
             return <FolderOpenOutlined className="icon_" />
         } else if (v === "application") {
             return <FileOutlined className="icon_" />
@@ -226,24 +251,31 @@ class Drive extends React.Component {
             return <CustomerServiceOutlined className="icon_" />
         }
     }
+
     handleshowfiles = (n, u) => {
-        const state = this.state;
         if (n && u) {
-            this.setState({
-                ...state,
-                showfilesdata: { n, u },
-                showfilesopen: true
+            this.setState(state => {
+                state.showfilesdata = { n, u }
+                return state.showfilesopen = true
             })
         } else {
-            this.setState({
-                ...state,
-                showfilesdata: {},
-                showfilesopen: false
+            this.setState(state => {
+                state.showfilesdata = {}
+                return state.showfilesopen = false
             })
         }
     }
     render() {
-        const { addnew, star, showfilesdata, showfilesopen, data, datalistsData, datalists } = this.state;
+        const {
+            addnew, star,
+            showfilesdata,
+            showfilesopen,
+            data,
+            datalistsData,
+            datalists,
+            filter
+        } = this.state;
+
         const propsfile = {
             name: 'file',
             multiple: true,
@@ -252,6 +284,7 @@ class Drive extends React.Component {
                 authorization: 'authorization-text',
             },
         };
+
         return (
             <div className="drivermain">
                 <Title level={4} className="title">Internal Storage</Title>
@@ -262,10 +295,24 @@ class Drive extends React.Component {
                         arrow
                         overlay={
                             <Menu className="menulist_item">
-                                <Menu.Item className="menulist_item"><Checkbox checked>Images</Checkbox></Menu.Item>
-                                <Menu.Item className="menulist_item"><Checkbox>Videos</Checkbox></Menu.Item>
-                                <Menu.Item className="menulist_item"><Checkbox>Files</Checkbox></Menu.Item>
-                                <Menu.Item className="menulist_item"><Checkbox>Folders</Checkbox></Menu.Item>
+                                <Menu.Item className="menulist_item" >
+                                    <Checkbox onChange={() => this.handlechangefilter("image")} checked={
+                                        filter === "image" ? true : false
+                                    } >Images</Checkbox></Menu.Item>
+                                <Menu.Item className="menulist_item" >
+                                    <Checkbox onChange={() => this.handlechangefilter("video")} checked={
+                                        filter === "video" ? true : false
+                                    } >Videos</Checkbox></Menu.Item>
+                                <Menu.Item className="menulist_item"
+                                >
+                                    <Checkbox onChange={() => this.handlechangefilter("application")} checked={
+                                        filter === "application" ? true : false
+                                    } >Files</Checkbox></Menu.Item>
+                                <Menu.Item className="menulist_item"
+                                >
+                                    <Checkbox onChange={() => this.handlechangefilter("file")} checked={
+                                        filter === "file" ? true : false
+                                    } >Folders</Checkbox></Menu.Item>
                             </Menu>
                         }>
                         <Button className="btn">
@@ -273,7 +320,7 @@ class Drive extends React.Component {
                         </Button>
                     </Dropdown>&nbsp;
                     <Button className="btn" icon={<PlusOutlined />}>
-                        Add Folder  </Button>
+                        Create Folder  </Button>
                 </div>
                 <Title level={4} className="sub_title_recent">Recent Files</Title>
                 <Row>
@@ -282,7 +329,7 @@ class Drive extends React.Component {
                             <Card className="drive_list_card"
                                 title={<div className="drive_list_card_div">
                                     {this.filesIcon(v?.type)}
-                                    <span>{v?.name}<div className="todo">{"." + v?.typepoint} / {v?.size + " Mb"}</div>
+                                    <span>{v?.name}<div className="todo">{"." + v?.typepoint} / {v?.size}</div>
                                     </span> </div>}
                                 extra={<label className="todo">{v?.date}
                                     {star === i ? <StarFilled className="more_star" style={{ color: "#F9C84C" }} onClick={() => this.handlechangestar(i)} /> :
@@ -297,14 +344,15 @@ class Drive extends React.Component {
                                                 <Menu.Item className="menulist_item"> <RetweetOutlined /> Rename </Menu.Item>
                                                 <Menu.Item className="menulist_item"> <CopyOutlined /> Copy </Menu.Item>
                                                 <Menu.Item className="menulist_item"> <ScissorOutlined /> Move </Menu.Item>
-                                                <Menu.Item className="menulist_item"> <DeleteOutlined /> Delete </Menu.Item>
-                                                <Menu.Item className="menulist_item" onClick={() => this.ondelete("datalists", v?.uid)}> <DownloadOutlined /> Download </Menu.Item>
+                                                <Menu.Item className="menulist_item" onClick={() => this.ondelete("datalists", i)}> <DeleteOutlined /> Delete </Menu.Item>
+                                                <Menu.Item className="menulist_item"> <DownloadOutlined /> Download </Menu.Item>
                                                 <Menu.Item className="menulist_item"> <ExpandAltOutlined /> Copy Link </Menu.Item>
                                             </Menu>}
                                     >
                                         <MoreOutlined className="more" />
                                     </Dropdown></label>} /></Col>
                     })}
+                    {datalists?.length <= 0 && <Title level={5} className="empty_data"><Empty /></Title>}
                 </Row>
                 <Title level={4} className="sub_title_recent">Files</Title>
                 <Row>
@@ -313,7 +361,7 @@ class Drive extends React.Component {
                             <Card className="drive_list_card"
                                 title={<div className="drive_list_card_div">
                                     {this.filesIcon(v?.type)}
-                                    <span>{v?.name}<div className="todo">{"." + v?.typepoint} / {v?.size + " Mb"}</div>
+                                    <span>{v?.name}<div className="todo">{"." + v?.typepoint} / {v?.size}</div>
                                     </span> </div>}
                                 extra={<label className="todo">{v?.date}
                                     {star === i ? <StarFilled className="more_star" style={{ color: "#F9C84C" }} onClick={() => this.handlechangestar(i)} /> :
@@ -328,8 +376,8 @@ class Drive extends React.Component {
                                                 <Menu.Item className="menulist_item"> <RetweetOutlined /> Rename </Menu.Item>
                                                 <Menu.Item className="menulist_item"> <CopyOutlined /> Copy </Menu.Item>
                                                 <Menu.Item className="menulist_item"> <ScissorOutlined /> Move </Menu.Item>
-                                                <Menu.Item className="menulist_item"> <DeleteOutlined /> Delete </Menu.Item>
-                                                <Menu.Item className="menulist_item" onClick={() => this.ondelete("data", v?.uid)}> <DownloadOutlined /> Download </Menu.Item>
+                                                <Menu.Item className="menulist_item" onClick={() => this.ondelete("data", i)}> <DeleteOutlined /> Delete </Menu.Item>
+                                                <Menu.Item className="menulist_item"> <DownloadOutlined /> Download </Menu.Item>
                                                 <Menu.Item className="menulist_item"> <ExpandAltOutlined /> Copy Link </Menu.Item>
                                             </Menu>}
                                     >
@@ -338,6 +386,7 @@ class Drive extends React.Component {
                                 </label>} />
                         </Col>
                     })}
+                    {data?.length <= 0 && <Title level={5} className="empty_data"><Empty /></Title>}
                 </Row>
                 <Tooltip title="Add">
                     <Avatar className="addicon" icon={<PlusOutlined />} onClick={() => this.handleopen()} />
@@ -353,9 +402,13 @@ class Drive extends React.Component {
                             <Upload
                                 {...propsfile}
                                 // directory
-                                defaultFileList={datalistsData}
+                                fileList={datalistsData}
                                 listType='picture'
-                                onChange={this.handleChange}
+                                onChange={(e) => this.handleChange(e)}
+                                onRemove={(e) => this.onRemove(e)}
+                            // showUploadList={{
+                            //     showDownloadIcon: true,
+                            // }}
                             >
                                 <p className="ant-upload-drag-icon">
                                     <InboxOutlined />

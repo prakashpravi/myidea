@@ -12,8 +12,8 @@ class ModalCom extends React.Component {
                 title={titleText && titleText}
                 style={{ top: 20 }}
                 visible={open && open}
-                onOk={() => onOk()}
-                onCancel={() => onCancel()}
+                onOk={() => onOk && onOk()}
+                onCancel={() => onCancel && onCancel()}
                 okText={okTextTitle && okTextTitle}
                 footer={footer && footer}
             >

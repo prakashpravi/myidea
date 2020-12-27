@@ -6,6 +6,10 @@
   overflow: auto;
 }
 
+.drivermain .empty_data {
+  margin: auto;
+}
+
 .drivermain .add_folder_div {
   text-align: right;
 }
