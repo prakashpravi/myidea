@@ -1,6 +1,96 @@
-.main {
-  background: #f9f9f9;
+.main-login {
+  contain: content;
+  border-radius: 0px;
   height: 100vh;
+  margin: auto;
+}
+
+.main-login .f-col {
+  background-color: #c7cfdf;
+  width: 100%;
+}
+
+.main-login .s-col {
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-login .s-col {
+    display: none;
+  }
+}
+
+.main-login .circle-ripple {
+  background-color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  -webkit-animation: ripple 0.7s linear infinite;
+          animation: ripple 0.7s linear infinite;
+  right: 10px;
+  position: absolute;
+}
+
+@-webkit-keyframes wait {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes wait {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(175, 166, 255, 0.3), 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3);
+            box-shadow: 0 0 0 0 rgba(175, 166, 255, 0.3), 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3), 0 0 0 8em rgba(175, 166, 255, 0);
+            box-shadow: 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3), 0 0 0 8em rgba(175, 166, 255, 0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(175, 166, 255, 0.3), 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3);
+            box-shadow: 0 0 0 0 rgba(175, 166, 255, 0.3), 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3), 0 0 0 8em rgba(175, 166, 255, 0);
+            box-shadow: 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3), 0 0 0 8em rgba(175, 166, 255, 0);
+  }
+}
+
+.main {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,19 +109,44 @@
   text-align: center;
 }
 
-.main .avatar {
-  position: absolute;
-  z-index: 1;
-  top: -24px;
-  left: 43%;
-  border: 1px solid #f0f0f0;
+.main .login-form .google-btn {
+  width: 100%;
+  margin: 12px 0px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.25);
+  color: #000;
+  border: none;
+  height: 40px;
+}
+
+.main .login-form .google-btn .google-icon {
+  float: left;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+
+.main .login-form .google-btn span {
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .main .login-form-forgot {
   float: right;
   color: #5e5e5e;
   font-weight: 500;
+  cursor: pointer;
   margin-top: -27px;
+  text-decoration: underline;
+}
+
+.main .login-form-keep {
+  float: left;
+  color: #5e5e5e;
+  font-weight: 500;
+  margin-top: -27px;
+  cursor: pointer;
 }
 
 .main .remember {
@@ -42,12 +157,18 @@
 .main .login-form-button {
   border-radius: 2px;
   width: 100%;
-  background-color: #29ac96;
-  border-color: #29ac96;
+  background-color: #313eda;
+  border-color: #313eda;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 12px;
+  height: 40px;
+}
+
+.main .login-form-button .loginIcon {
+  margin-top: 4px;
+  float: right;
 }
 
 .main ::-webkit-input-placeholder {
@@ -72,6 +193,14 @@
   color: #999;
   font-size: 14px;
   font-weight: 400;
+}
+
+.main .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.main .ant-form-item input {
+  height: 30px;
 }
 
 .main .ant-form-item-explain-error {
@@ -105,5 +234,12 @@
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main .login-form {
+    width: 93%;
+    min-width: 93%;
+  }
 }
 /*# sourceMappingURL=styled.css.map */

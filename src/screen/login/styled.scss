@@ -1,6 +1,91 @@
-.main {
-    background: #f9f9f9;
+.main-login {
+    contain: content;
+    // margin: 50px auto;
+    // width: 80%;
+    border-radius: 0px;
     height: 100vh;
+    margin: auto;
+    .f-col {
+        background-color: #c7cfdf;
+        width: 100%;
+    }
+    .s-col {
+        display: block;
+    }
+    @media only screen and (max-width: 768px) {
+        .s-col {
+            display: none;
+        }
+    }
+    .circle-ripple {
+        background-color: transparent;
+        width: 1px;
+        height: 1px;
+        border-radius: 50%;
+        animation: ripple 0.7s linear infinite;
+        right: 10px;
+        position: absolute;
+    }
+
+    @-webkit-keyframes wait {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 0;
+        }
+        60% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes wait {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 0;
+        }
+        60% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes ripple {
+        0% {
+            box-shadow: 0 0 0 0 rgba(175, 166, 255, 0.3), 0 0 0 1em rgba(175, 166, 255, 0.3),
+                0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3);
+        }
+        100% {
+            box-shadow: 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3),
+                0 0 0 5em rgba(175, 166, 255, 0.3), 0 0 0 8em rgba(175, 166, 255, 0);
+        }
+    }
+    @keyframes ripple {
+        0% {
+            box-shadow: 0 0 0 0 rgba(175, 166, 255, 0.3), 0 0 0 1em rgba(175, 166, 255, 0.3),
+                0 0 0 3em rgba(175, 166, 255, 0.3), 0 0 0 5em rgba(175, 166, 255, 0.3);
+        }
+        100% {
+            box-shadow: 0 0 0 1em rgba(175, 166, 255, 0.3), 0 0 0 3em rgba(175, 166, 255, 0.3),
+                0 0 0 5em rgba(175, 166, 255, 0.3), 0 0 0 8em rgba(175, 166, 255, 0);
+        }
+    }
+}
+.main {
+    // background: #f9f9f9;
+    height: 100%;
     display: flex;
     .login-form {
         min-width: 340px;
@@ -12,19 +97,47 @@
         position: relative;
         border: 1px solid #f0f0f0;
         text-align: center;
+        .google-btn {
+            width: 100%;
+            margin: 12px 0px;
+            background-color: #fff;
+            box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.25);
+            color: #000;
+            border: none;
+            height: 40px;
+            .google-icon {
+                float: left;
+                width: 18px;
+                height: 18px;
+                margin-top: 3px;
+            }
+            span {
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
     }
     .avatar {
-        position: absolute;
-        z-index: 1;
-        top: -24px;
-        left: 43%;
-        border: 1px solid #f0f0f0;
+        // position: absolute;
+        // z-index: 1;
+        // top: -24px;
+        // left: 43%;
+        // border: 1px solid #f0f0f0;
     }
     .login-form-forgot {
         float: right;
         color: rgb(94, 94, 94);
         font-weight: 500;
+        cursor: pointer;
         margin-top: -27px;
+        text-decoration: underline;
+    }
+    .login-form-keep {
+        float: left;
+        color: rgb(94, 94, 94);
+        font-weight: 500;
+        margin-top: -27px;
+        cursor: pointer;
     }
     .remember {
         color: rgb(94, 94, 94);
@@ -33,17 +146,29 @@
     .login-form-button {
         border-radius: 2px;
         width: 100%;
-        background-color: #29ac96;
-        border-color: #29ac96;
+        background-color: #313eda;
+        border-color: #313eda;
         color: #fff;
         font-size: 14px;
         font-weight: 600;
         margin-bottom: 12px;
+        height: 40px;
+        // padding: 18px 0px;
+        .loginIcon {
+            margin-top: 4px;
+            float: right;
+        }
     }
     ::placeholder {
         color: #999;
         font-size: 14px;
         font-weight: 400;
+    }
+    .ant-form-item {
+        margin-bottom: 20px;
+        input {
+            height: 30px;
+        }
     }
     .ant-form-item-explain-error {
         color: #db2269;
@@ -71,5 +196,11 @@
         outline: none !important;
         box-shadow: none !important;
         border-radius: 4px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .main .login-form {
+        width: 93%;
+        min-width: 93%;
     }
 }
