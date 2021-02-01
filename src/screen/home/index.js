@@ -4,6 +4,7 @@ import routes from "../../router/router";
 import SiderBar from "../../components/sidebar";
 import Header from "../../components/header/index";
 import Drive from "../../components/drive";
+import Document from "../../components/docc/index";
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -12,6 +13,8 @@ class Home extends React.Component {
     Content = () => {
         if (window.location.pathname === routes.Drive) {
             return <Drive {...this.props} />
+        } else if (window.location.pathname === routes.docc) {
+            return <Document {...this.props} /> 
         }
     }
     render() {

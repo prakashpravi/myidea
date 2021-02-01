@@ -14,12 +14,13 @@ import {
 
 class RouterApp extends React.Component {
     render() {
-        return (
+        return ( 
             <Router>
                 <Switch>
                     <Route exact path="/" component={Login} />
                     <Route path={routes.Workspace} component={Workspace} />
                     <Route path={routes.Drive} component={Home} />
+                    <Route path={routes.docc} component={Home} />
                 </Switch>
             </Router>
         );

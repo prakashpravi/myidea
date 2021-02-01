@@ -1,8 +1,8 @@
 import React from 'react';
 import { Layout, Menu, Avatar, Tooltip } from 'antd';
 import {
-    // FireOutlined, MessageOutlined, FileTextOutlined, ProfileOutlined,
-    FileZipOutlined, AppstoreOutlined
+    // FireOutlined, MessageOutlined, ProfileOutlined,
+    FileZipOutlined, AppstoreOutlined,FileTextOutlined
 } from '@ant-design/icons';
 import "./styled.css"
 const { Sider, Footer } = Layout;
@@ -13,8 +13,8 @@ class SiderBar extends React.Component {
             // { name: "Projects", url: "/project", icon: <ProfileOutlined /> },
             // { name: "Actions", url: "/actions", icon: <FireOutlined /> },
             // { name: "Message", url: "", icon: <MessageOutlined /> },
-            // { name: "Doccuments", url: "", icon: <FileTextOutlined /> },
             { name: "Drive", url: "/drive", icon: <FileZipOutlined /> },
+            { name: "Doccuments", url: "/docc", icon: <FileTextOutlined /> },
             { name: "More", url: "", icon: <AppstoreOutlined /> },
         ];
         const url = window.location.pathname;

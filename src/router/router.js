@@ -1,6 +1,7 @@
 const routes = {
     Login: "/login",
     Workspace:"/workspace",
-    Drive:"/drive"
-}
+    Drive:"/drive",
+    docc:"/docc",
+} 
 export default routes;

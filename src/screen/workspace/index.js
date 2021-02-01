@@ -32,8 +32,8 @@ class Workspace extends React.Component {
         return (<div className="workspace">
             <Row className="workspacelog">
                 <Title level={5} className="dis_title">Logo Soon !</Title>
-                <Title level={3} className="title">Welcome to your Workspace!</Title>
-                <Title level={5} className="dis_title">Continue with the Workspace account or email address you use to sign in.</Title>
+                {/* <Title level={3} className="title">Welcome to your Workspace!</Title>
+                <Title level={5} className="dis_title">Continue with the Workspace account or email address you use to sign in.</Title> */}
 
                 <Form
                     name="normal_login"

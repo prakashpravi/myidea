@@ -18,7 +18,6 @@ import "./styled.css";
 import moment from "moment";
 
 const { Title } = Typography;
-var dataList = [];
 class Drive extends React.Component {
     constructor(props) {
         super(props);
@@ -188,6 +187,7 @@ class Drive extends React.Component {
         return bytes;
     }
     handleChange = (info) => {
+        let dataList = [];
         const state = this.state;
         this.setState(state => {
             return state.folder = false
@@ -203,7 +203,7 @@ class Drive extends React.Component {
             }
         } else {
             this.getBase64(info.file.originFileObj, imageUrl => {
-                dataList?.push({
+                dataList.push({
                     name: info.file.name,
                     status: "done",
                     type: info.file.type.split("/")[0],
